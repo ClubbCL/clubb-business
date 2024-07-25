@@ -1,6 +1,6 @@
 ![Clubb](https://raw.githubusercontent.com/ClubbCL/clubb-business/develop/src/assets/clubb.png)
 
-# Clubb Business [![Netlify Status](https://api.netlify.com/api/v1/badges/18bee5f4-9340-46f7-8b0c-ac26b29f934e/deploy-status?branch=develop)](https://app.netlify.com/sites/clubb-business/deploys)
+# Clubb Business [![Netlify Status](https://api.netlify.com/api/v1/badges/18bee5f4-9340-46f7-8b0c-ac26b29f934e/deploy-status?branch=staging)](https://app.netlify.com/sites/clubb-business/deploys)
 
 Welcome to Clubb Business, a Vite + React + TypeScript project for creating and managing clubs.
 
