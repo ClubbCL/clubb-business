@@ -1,5 +1,5 @@
-import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import { Button } from './button';
 
@@ -12,7 +12,6 @@ const meta = {
     children: { control: 'text' },
   },
 } satisfies Meta<typeof Button>;
-
 
 export default meta;
 type Story = StoryObj<typeof meta>;
