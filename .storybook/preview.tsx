@@ -4,8 +4,9 @@ import '../src/index.css';
 import i18n from '../src/i18n';
 
 import type { Preview } from "@storybook/react";
-import React, { Suspense, useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
+import React, { Suspense, useEffect } from "react";
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +14,12 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+    },
+    viewport: {
+      viewports: {
+        ...INITIAL_VIEWPORTS,
+        ...MINIMAL_VIEWPORTS,
       },
     },
   },
