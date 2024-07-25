@@ -1,4 +1,4 @@
-![Clubb](https://dweb.link/ipfs/bafkreibtfxe6v5baynz5tbdr4j2umxz3td2yrlaz5r7az4lldu3w7u75di)
+![Clubb](https://bafkreibtfxe6v5baynz5tbdr4j2umxz3td2yrlaz5r7az4lldu3w7u75di.ipfs.dweb.link/)
 
 # Clubb Business [![Netlify Status](https://api.netlify.com/api/v1/badges/18bee5f4-9340-46f7-8b0c-ac26b29f934e/deploy-status?branch=develop)](https://app.netlify.com/sites/clubb-business/deploys)
 
