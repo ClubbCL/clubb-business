@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+![Clubb](https://raw.githubusercontent.com/ClubbCL/clubb-business/develop/src/assets/clubb.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Clubb Business [![Netlify Status](https://api.netlify.com/api/v1/badges/18bee5f4-9340-46f7-8b0c-ac26b29f934e/deploy-status?branch=staging)](https://app.netlify.com/sites/clubb-business/deploys)
 
-Currently, two official plugins are available:
+Welcome to Clubb Business, a Vite + React + TypeScript project for creating and managing clubs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+To run the project, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository: `git clone https://github.com/your-username/clubb-business.git`
+2. Navigate to the project directory: `cd clubb-business`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
 
-- Configure the top-level `parserOptions` property like this:
+## Building the Project
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+To build the project for production, use the following command:
+
+```bash
+npm run build
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will generate an optimized build in the `dist` directory.
+
+## Contributing
+
+We welcome contributions to Clubb Business! If you'd like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/my-feature`.
+3. Make your changes and commit them: `git commit -m "Add my feature"`.
+4. Push to your forked repository: `git push origin feature/my-feature`.
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
