@@ -1,6 +1,10 @@
 {
   "helloWorld": "Hello World",
   "forms": {
+    "auth": {
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "Don't have an account? Sign up"
+    },
     "signin": {
       "labels": {
         "email": "Email:",
