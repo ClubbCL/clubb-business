@@ -1,3 +1,32 @@
 {
-  "helloWorld": "Hola Mundo"
+  "helloWorld": "Hola Mundo",
+  "forms": {
+    "signin": {
+      "labels": {
+        "email": "Email:",
+        "password": "Contraseña:",
+        "submit": "Iniciar Sesión"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida",
+        "minPasswordLength": "La contraseña no puede estar vacía"
+      }
+    },
+    "signup": {
+      "labels": {
+        "email": "Email:",
+        "password": "Contraseña:",
+        "passwordConfirmation": "Confirmar Contraseña:",
+        "submit": "Crear Cuenta"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida",
+        "minPasswordLength": "La contraseña debe tener al menos 8 caracteres",
+        "maxPasswordLength": "La contraseña debe tener como máximo 20 caracteres",
+        "passwordSpecialChars": "La contraseña debe contener al menos un carácter especial",
+        "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+        "passwordDoesNotMatch": "Las contraseñas no coinciden"
+      }
+    }
+  }
 }

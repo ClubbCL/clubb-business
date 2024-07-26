@@ -1,3 +1,32 @@
 {
-  "helloWorld": "Hello World"
+  "helloWorld": "Hello World",
+  "forms": {
+    "signin": {
+      "labels": {
+        "email": "Email:",
+        "password": "Password:",
+        "submit": "Sign In"
+      },
+      "errors": {
+        "invalidEmail": "Invalid email address",
+        "minPasswordLength": "Password can not be empty"
+      }
+    },
+    "signup": {
+      "labels": {
+        "email": "Email:",
+        "password": "Password:",
+        "passwordConfirmation": "Confirm Password:",
+        "submit": "Create Account"
+      },
+      "errors": {
+        "invalidEmail": "Invalid email address",
+        "minPasswordLength": "Password must be at least 8 characters long",
+        "maxPasswordLength": "Password must be at most 20 characters long",
+        "passwordSpecialChars": "Password must contain at least one special character",
+        "passwordUppercase": "Password must contain at least one uppercase letter",
+        "passwordDoesNotMatch": "Passwords do not match"
+      }
+    }
+  }
 }
