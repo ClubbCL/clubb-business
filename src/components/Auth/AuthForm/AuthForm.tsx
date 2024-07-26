@@ -5,7 +5,7 @@ import { Signup, SignupProps } from '@components/Auth/Signup';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-export interface AuthFormProps {
+export interface AuthFormProps extends React.HTMLProps<HTMLDivElement> {
   onSignupSubmit: SignupProps['onSubmit'];
   onSigninSubmit: SigninProps['onSubmit'];
   onForgotPasswordSubmit: ForgotPasswordProps['onSubmit'];
@@ -29,6 +29,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
     onForgotPasswordSubmit,
     onResetPasswordSubmit,
     defaultForm = 'signin',
+    ...divProps
   } = props;
 
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   }
 
   return (
-    <div>
+    <div {...divProps}>
       <div>{form}</div>
       <div className="flex flex-col items-center mt-4 text-sm gap-y-1">{links}</div>
     </div>
