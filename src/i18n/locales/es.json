@@ -3,7 +3,31 @@
   "forms": {
     "auth": {
       "forgotPassword": "¿Olvidaste tu contraseña?",
-      "noAccount": "¿No tienes una cuenta? Regístrate"
+      "noAccount": "¿No tienes una cuenta? Regístrate",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia Sesión"
+    },
+    "forgotPassword": {
+      "labels": {
+        "email": "Email:",
+        "submit": "Enviar enlace para restablecer la contraseña"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida"
+      }
+    },
+    "resetPassword": {
+      "labels": {
+        "password": "Nueva Contraseña:",
+        "passwordConfirmation": "Confirmar Nueva Contraseña:",
+        "submit": "Restablecer contraseña"
+      },
+      "errors": {
+        "minPasswordLength": "La contraseña debe tener al menos 8 caracteres",
+        "maxPasswordLength": "La contraseña debe tener como máximo 20 caracteres",
+        "passwordSpecialChars": "La contraseña debe contener al menos un carácter especial",
+        "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+        "passwordDoesNotMatch": "Las contraseñas no coinciden"
+      }
     },
     "signin": {
       "labels": {

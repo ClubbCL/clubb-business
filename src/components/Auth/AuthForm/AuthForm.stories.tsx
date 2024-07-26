@@ -13,9 +13,11 @@ const meta = {
   argTypes: {
     onSigninSubmit: { action: 'signin' },
     onSignupSubmit: { action: 'signup' },
+    onForgotPasswordSubmit: { action: 'forgot-password' },
+    onResetPasswordSubmit: { action: 'reset-password' },
     defaultForm: {
       control: 'radio',
-      options: ['signin', 'signup'],
+      options: ['signin', 'signup', 'reset-password', 'forgot-password'],
     },
   },
 } satisfies Meta<typeof AuthForm>;
@@ -27,6 +29,8 @@ export const Primary: Story = {
   args: {
     onSigninSubmit: fn(),
     onSignupSubmit: fn(),
+    onForgotPasswordSubmit: fn(),
+    onResetPasswordSubmit: fn(),
     defaultForm: 'signin',
   },
 };
