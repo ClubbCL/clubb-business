@@ -2,11 +2,19 @@ import { ROUTES } from '@/router';
 import { AuthForm, AuthFormProps } from '@components/Auth';
 import { AuthError } from '@utils/errors';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/hooks';
 import { client } from '@utils/client';
 import { useTranslation } from 'react-i18next';
+
+const getDefaultForm = (pathname: string): Required<AuthFormProps>['defaultForm'] => {
+  if (matchPath(ROUTES.signin, pathname)) return 'signin';
+  if (matchPath(ROUTES.signup, pathname)) return 'signup';
+  if (matchPath(ROUTES.forgotPassword, pathname)) return 'forgot-password';
+  if (matchPath(ROUTES.resetPassword, pathname)) return 'reset-password';
+  return 'signin';
+};
 
 export const Auth = () => {
   const [loading, setLoading] = useState(false);
@@ -17,11 +25,10 @@ export const Auth = () => {
   const navigate = useNavigate();
 
   const pathname = location.pathname;
-  const defaultForm = pathname.slice(1) as Required<AuthFormProps>['defaultForm'];
 
   useEffect(() => {
     if (user) {
-      if (pathname === ROUTES.signin) return navigate(ROUTES.root);
+      if (matchPath(ROUTES.signin, pathname)) return navigate(ROUTES.root);
     }
   }, [user, pathname]);
 
@@ -126,7 +133,7 @@ export const Auth = () => {
       <AuthForm
         className="w-full max-w-sm"
         loading={loading}
-        defaultForm={defaultForm}
+        defaultForm={getDefaultForm(pathname)}
         onForgotPasswordSubmit={onForgotPasswordSubmit}
         onSigninSubmit={onSigninHandler}
         onResetPasswordSubmit={onResetPasswordSubmit}
