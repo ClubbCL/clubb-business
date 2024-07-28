@@ -25,6 +25,7 @@ i18n
     resources,
     supportedLngs: ['en', 'es'],
     fallbackLng: 'es',
+    lng: 'es',
     debug: true,
     interpolation: {
       escapeValue: false,
