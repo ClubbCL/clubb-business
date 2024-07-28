@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/button';
+import { ErrorMessage } from '@ui/error-message';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
 import { Input } from '@ui/input';
 import React from 'react';
-import { FormProviderProps, useForm } from 'react-hook-form';
+import { FormProviderProps, useForm, UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
@@ -13,6 +14,8 @@ export interface SigninFormValues {
   password: string;
 }
 
+export type SigninForm = UseFormReturn<SigninFormValues>;
+
 export interface SigninProps extends Partial<FormProviderProps> {
   /**
    * Callback function that will be called when the signup form is submitted.
@@ -20,7 +23,7 @@ export interface SigninProps extends Partial<FormProviderProps> {
    * @property {string} values.email - The email entered in the signup form.
    * @property {string} values.password - The password entered in the signup form.
    */
-  onSubmit: (values: SigninFormValues) => void;
+  onSubmit: (values: SigninFormValues, form: SigninForm) => void;
   /**
    * If `true`, the form will be disabled.
    * @param {boolean} disabled - If `true`, the form will be disabled.
@@ -62,10 +65,11 @@ export const Signin: React.FC<SigninProps> = (props) => {
   });
 
   const isDisabled = disabled || loading;
+  const formError = form.formState.errors.root;
 
   return (
     <Form {...formProps} {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit((data) => onSubmit(data, form))}>
         <div className="grid gap-2">
           <FormField
             control={form.control}
@@ -93,6 +97,7 @@ export const Signin: React.FC<SigninProps> = (props) => {
               </FormItem>
             )}
           />
+          {formError && <ErrorMessage className="mt-4">{formError.message}</ErrorMessage>}
           <Button type="submit" disabled={isDisabled} className="mt-4">
             {loading ? <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : t('forms.signin.labels.submit')}
           </Button>

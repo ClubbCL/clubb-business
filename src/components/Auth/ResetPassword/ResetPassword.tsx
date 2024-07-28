@@ -1,10 +1,11 @@
+import { ErrorMessage } from '@/components/ui/error-message';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
 import { Input } from '@ui/input';
 import React from 'react';
-import { FormProviderProps, useForm } from 'react-hook-form';
+import { FormProviderProps, useForm, UseFormReturn } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
@@ -13,6 +14,7 @@ export interface ResetPasswordFormValues {
   confirmPassword: string;
 }
 
+export type ResetPasswordForm = UseFormReturn<ResetPasswordFormValues>;
 export interface ResetPasswordProps extends Partial<FormProviderProps> {
   /**
    * Callback function that will be called when the signup form is submitted.
@@ -20,7 +22,7 @@ export interface ResetPasswordProps extends Partial<FormProviderProps> {
    * @property {string} values.password - The password entered in the signup form.
    * @property {string} values.confirmPassword - The confirmed password entered in the signup form.
    */
-  onSubmit: (values: ResetPasswordFormValues) => void;
+  onSubmit: (values: ResetPasswordFormValues, form: ResetPasswordForm) => void;
   /**
    * If `true`, the form will be disabled.
    * @param {boolean} disabled - If `true`, the form will be disabled.
@@ -72,10 +74,11 @@ export const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
   });
 
   const isDisabled = disabled || loading;
+  const formError = form.formState.errors.root;
 
   return (
     <Form {...formProps} {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit((data) => onSubmit(data, form))}>
         <div className="grid gap-2">
           <FormField
             control={form.control}
@@ -103,6 +106,7 @@ export const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
               </FormItem>
             )}
           />
+          {formError && <ErrorMessage className="mt-4">{formError.message}</ErrorMessage>}
           <Button type="submit" disabled={isDisabled} className="mt-4">
             {loading ? <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : t('forms.resetPassword.labels.submit')}
           </Button>

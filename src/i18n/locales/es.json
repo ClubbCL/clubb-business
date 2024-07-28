@@ -1,5 +1,8 @@
 {
   "helloWorld": "Hola Mundo",
+  "errors": {
+    "general": "¡Ups! Algo salió mal, por favor inténtalo de nuevo más tarde."
+  },
   "forms": {
     "auth": {
       "forgotPassword": "¿Olvidaste tu contraseña?",
@@ -37,7 +40,8 @@
       },
       "errors": {
         "invalidEmail": "Dirección de correo electrónico inválida",
-        "minPasswordLength": "La contraseña no puede estar vacía"
+        "minPasswordLength": "La contraseña no puede estar vacía",
+        "invalidCredentials": "Correo electrónico o contraseña inválidos"
       }
     },
     "signup": {
@@ -53,7 +57,8 @@
         "maxPasswordLength": "La contraseña debe tener como máximo 20 caracteres",
         "passwordSpecialChars": "La contraseña debe contener al menos un carácter especial",
         "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
-        "passwordDoesNotMatch": "Las contraseñas no coinciden"
+        "passwordDoesNotMatch": "Las contraseñas no coinciden",
+        "userAlreadyExists": "La dirección de correo electrónico ya está en uso"
       }
     }
   }

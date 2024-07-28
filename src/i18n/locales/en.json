@@ -1,5 +1,8 @@
 {
   "helloWorld": "Hello World",
+  "errors": {
+    "general": "Ups! Something went wrong, please try again later."
+  },
   "forms": {
     "auth": {
       "forgotPassword": "Forgot your password?",
@@ -37,7 +40,8 @@
       },
       "errors": {
         "invalidEmail": "Invalid email address",
-        "minPasswordLength": "Password can not be empty"
+        "minPasswordLength": "Password can not be empty",
+        "invalidCredentials": "Invalid email or password"
       }
     },
     "signup": {
@@ -53,7 +57,8 @@
         "maxPasswordLength": "Password must be at most 20 characters long",
         "passwordSpecialChars": "Password must contain at least one special character",
         "passwordUppercase": "Password must contain at least one uppercase letter",
-        "passwordDoesNotMatch": "Passwords do not match"
+        "passwordDoesNotMatch": "Passwords do not match",
+        "userAlreadyExists": "The email address is already in use"
       }
     }
   }

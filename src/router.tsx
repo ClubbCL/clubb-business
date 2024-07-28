@@ -1,21 +1,38 @@
-import { Auth } from '@pages';
+import { ProtectedRoute } from '@components';
+import { Auth, Root } from '@pages';
 import { createBrowserRouter } from 'react-router-dom';
+
+export const ROUTES = {
+  root: '/',
+  signin: '/signin',
+  signup: '/signup',
+  resetPassword: '/reset-password',
+  forgotPassword: '/forgot-password',
+};
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
   {
-    path: '/signin',
+    path: ROUTES.root,
+    element: (
+      <ProtectedRoute>
+        <Root />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: ROUTES.signin,
     element: <Auth />,
   },
   {
-    path: '/signup',
+    path: ROUTES.signup,
     element: <Auth />,
   },
   {
-    path: '/forgot-password',
+    path: ROUTES.forgotPassword,
     element: <Auth />,
   },
   {
-    path: '/reset-password',
+    path: ROUTES.resetPassword,
     element: <Auth />,
   },
 ]);
