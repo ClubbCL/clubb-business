@@ -50,7 +50,7 @@ export const Auth = () => {
     } else {
       // User successfully signed up
       form.reset();
-      // TODO: redirect user to confirmation page
+      navigate(ROUTES.accountCreated);
     }
   };
 
@@ -80,15 +80,56 @@ export const Auth = () => {
     }
   };
 
+  const onForgotPasswordSubmit: AuthFormProps['onForgotPasswordSubmit'] = async (formValues, form) => {
+    setLoading(true);
+
+    const { email } = formValues;
+    const { error } = await client.sendPasswordResetEmail(email);
+
+    setLoading(false);
+
+    if (error) {
+      // Unknown error
+      form.setError('root', {
+        message: t('errors.general'),
+      });
+      console.error('Forgot password error', error);
+    } else {
+      form.reset();
+      navigate(ROUTES.resetPasswordEmailSent);
+    }
+  };
+
+  const onResetPasswordSubmit: AuthFormProps['onResetPasswordSubmit'] = async (formValues, form) => {
+    setLoading(true);
+
+    const { password } = formValues;
+    const { error } = await client.updateUserPassword(password);
+
+    setLoading(false);
+
+    if (error) {
+      // Unknown error
+      form.setError('root', {
+        message: t('errors.general'),
+      });
+      console.error('Reset password error', error);
+    } else {
+      // Password successfully reset
+      form.reset();
+      navigate(ROUTES.restPasswordSuccess);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <AuthForm
         className="w-full max-w-sm"
         loading={loading}
         defaultForm={defaultForm}
-        onForgotPasswordSubmit={console.log}
+        onForgotPasswordSubmit={onForgotPasswordSubmit}
         onSigninSubmit={onSigninHandler}
-        onResetPasswordSubmit={console.log}
+        onResetPasswordSubmit={onResetPasswordSubmit}
         onSignupSubmit={onSignupHandler}
       />
     </div>

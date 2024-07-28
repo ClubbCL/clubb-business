@@ -1,5 +1,20 @@
 {
   "helloWorld": "Hola Mundo",
+  "pages": {
+    "accountCreated": {
+      "title": "¡Cuenta Creada!",
+      "message": "Tu cuenta ha sido creada exitosamente. Por favor revisa tu correo electrónico para verificar tu cuenta."
+    },
+    "resetPasswordEmailSent": {
+      "title": "¡Revisa Tu Correo Electrónico!",
+      "message": "Hemos enviado un correo electrónico con instrucciones para restablecer tu contraseña."
+    },
+    "resetPasswordSuccess": {
+      "title": "¡Restablecimiento de Contraseña Exitoso!",
+      "message": "Tu contraseña ha sido restablecida exitosamente. Serás redirigido al panel de control en {{secondsLeft}} segundos.",
+      "continue": "Continuar"
+    }
+  },
   "errors": {
     "general": "¡Ups! Algo salió mal, por favor inténtalo de nuevo más tarde."
   },

@@ -1,3 +1,4 @@
+import { ROUTES } from '@/router';
 import { AuthError, AuthErrorType } from '@utils/errors';
 import { supabase } from '@utils/supabase';
 import { BaseClient } from './types';
@@ -63,6 +64,32 @@ export class SupabaseClient implements BaseClient {
     return {
       data: undefined,
       error: result.error,
+    };
+  };
+
+  sendPasswordResetEmail: BaseClient['sendPasswordResetEmail'] = async (email) => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + ROUTES.resetPassword,
+    });
+
+    return {
+      data: undefined,
+      error,
+    };
+  };
+
+  updateUserPassword: BaseClient['updateUserPassword'] = async (newPassword) => {
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword,
+    });
+
+    const { user } = data;
+
+    return {
+      error,
+      data: {
+        ...(user && { user: { email: user.email, id: user.id } }),
+      },
     };
   };
 }

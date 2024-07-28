@@ -31,4 +31,6 @@ export interface BaseClient {
     callback: (event: AuthChangeEvent, session: Session | null) => void | Promise<void>
   ): OnAuthStatusChangeUnsubscribe;
   signOut(): Promise<BaseClientResponse<undefined, Error>>;
+  sendPasswordResetEmail(email: string): Promise<BaseClientResponse<undefined, AuthErrorType>>;
+  updateUserPassword(newPassword: string): Promise<BaseClientResponse<{ user?: User }, AuthErrorType>>;
 }
