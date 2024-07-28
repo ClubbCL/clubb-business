@@ -1,0 +1,80 @@
+{
+  "helloWorld": "Hello World",
+  "pages": {
+    "accountCreated": {
+      "title": "Account Created!",
+      "message": "Your account has been created successfully. Please check your email to verify your account."
+    },
+    "resetPasswordEmailSent": {
+      "title": "Check Your Email!",
+      "message": "We have sent an email with instructions to reset your password."
+    },
+    "resetPasswordSuccess": {
+      "title": "Password Reset Successful!",
+      "message": "Your password has been reset successfully. You will be redirected to the dashboard in a {{secondsLeft}} seconds.",
+      "continue": "Continue"
+    }
+  },
+  "errors": {
+    "general": "Ups! Something went wrong, please try again later."
+  },
+  "forms": {
+    "auth": {
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "Don't have an account? Sign up",
+      "alreadyHaveAccount": "Already have an account? Sign in"
+    },
+    "forgotPassword": {
+      "labels": {
+        "email": "Email:",
+        "submit": "Send reset password link"
+      },
+      "errors": {
+        "invalidEmail": "Invalid email address"
+      }
+    },
+    "resetPassword": {
+      "labels": {
+        "password": "New Password:",
+        "passwordConfirmation": "Confirm New Password:",
+        "submit": "Reset password"
+      },
+      "errors": {
+        "minPasswordLength": "Password must be at least 8 characters long",
+        "maxPasswordLength": "Password must be at most 20 characters long",
+        "passwordSpecialChars": "Password must contain at least one special character",
+        "passwordUppercase": "Password must contain at least one uppercase letter",
+        "passwordDoesNotMatch": "Passwords do not match"
+      }
+    },
+    "signin": {
+      "labels": {
+        "email": "Email:",
+        "password": "Password:",
+        "submit": "Sign In"
+      },
+      "errors": {
+        "invalidEmail": "Invalid email address",
+        "minPasswordLength": "Password can not be empty",
+        "invalidCredentials": "Invalid email or password"
+      }
+    },
+    "signup": {
+      "labels": {
+        "email": "Email:",
+        "password": "Password:",
+        "passwordConfirmation": "Confirm Password:",
+        "submit": "Create Account"
+      },
+      "errors": {
+        "invalidEmail": "Invalid email address",
+        "minPasswordLength": "Password must be at least 8 characters long",
+        "maxPasswordLength": "Password must be at most 20 characters long",
+        "passwordSpecialChars": "Password must contain at least one special character",
+        "passwordUppercase": "Password must contain at least one uppercase letter",
+        "passwordDoesNotMatch": "Passwords do not match",
+        "userAlreadyExists": "The email address is already in use"
+      }
+    }
+  }
+}
