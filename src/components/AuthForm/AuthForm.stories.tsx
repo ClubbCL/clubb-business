@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AuthForm } from './AuthForm';
 
 const meta = {
-  title: 'Components/AuthForm',
+  title: 'Components/AuthForm2',
   component: AuthForm,
   tags: ['autodocs'],
   argTypes: {},

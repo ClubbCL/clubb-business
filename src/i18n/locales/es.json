@@ -1,3 +1,80 @@
 {
-  "helloWorld": "Hola Mundo"
+  "helloWorld": "Hola Mundo",
+  "pages": {
+    "accountCreated": {
+      "title": "¡Cuenta Creada!",
+      "message": "Tu cuenta ha sido creada exitosamente. Por favor revisa tu correo electrónico para verificar tu cuenta."
+    },
+    "resetPasswordEmailSent": {
+      "title": "¡Revisa Tu Correo Electrónico!",
+      "message": "Hemos enviado un correo electrónico con instrucciones para restablecer tu contraseña."
+    },
+    "resetPasswordSuccess": {
+      "title": "¡Restablecimiento de Contraseña Exitoso!",
+      "message": "Tu contraseña ha sido restablecida exitosamente. Serás redirigido al panel de control en {{secondsLeft}} segundos.",
+      "continue": "Continuar"
+    }
+  },
+  "errors": {
+    "general": "¡Ups! Algo salió mal, por favor inténtalo de nuevo más tarde."
+  },
+  "forms": {
+    "auth": {
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta? Regístrate",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia Sesión"
+    },
+    "forgotPassword": {
+      "labels": {
+        "email": "Email:",
+        "submit": "Enviar enlace para restablecer la contraseña"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida"
+      }
+    },
+    "resetPassword": {
+      "labels": {
+        "password": "Nueva Contraseña:",
+        "passwordConfirmation": "Confirmar Nueva Contraseña:",
+        "submit": "Restablecer contraseña"
+      },
+      "errors": {
+        "minPasswordLength": "La contraseña debe tener al menos 8 caracteres",
+        "maxPasswordLength": "La contraseña debe tener como máximo 20 caracteres",
+        "passwordSpecialChars": "La contraseña debe contener al menos un carácter especial",
+        "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+        "passwordDoesNotMatch": "Las contraseñas no coinciden"
+      }
+    },
+    "signin": {
+      "labels": {
+        "email": "Email:",
+        "password": "Contraseña:",
+        "submit": "Iniciar Sesión"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida",
+        "minPasswordLength": "La contraseña no puede estar vacía",
+        "invalidCredentials": "Correo electrónico o contraseña inválidos"
+      }
+    },
+    "signup": {
+      "labels": {
+        "email": "Email:",
+        "password": "Contraseña:",
+        "passwordConfirmation": "Confirmar Contraseña:",
+        "submit": "Crear Cuenta"
+      },
+      "errors": {
+        "invalidEmail": "Dirección de correo electrónico inválida",
+        "minPasswordLength": "La contraseña debe tener al menos 8 caracteres",
+        "maxPasswordLength": "La contraseña debe tener como máximo 20 caracteres",
+        "passwordSpecialChars": "La contraseña debe contener al menos un carácter especial",
+        "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+        "passwordDoesNotMatch": "Las contraseñas no coinciden",
+        "userAlreadyExists": "La dirección de correo electrónico ya está en uso"
+      }
+    }
+  }
 }
