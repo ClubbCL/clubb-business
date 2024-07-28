@@ -13,6 +13,17 @@
     "paths": {
       "@/*": ["./src/*"],
       "@ui/*": ["./src/components/ui/*"],
+      "@ui": ["./src/components/ui"],
+      "@utils/*": ["./src/utils/*"],
+      "@utils": ["./src/utils"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@pages/*": ["./src/pages/*"],
+      "@pages": ["./src/pages"],
+      "@providers/*": ["./src/providers/*"],
+      "@providers": ["./src/providers"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@hooks": ["./src/hooks"]
     }
   }
 }
