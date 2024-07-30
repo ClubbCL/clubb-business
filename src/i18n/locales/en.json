@@ -1,6 +1,9 @@
 {
   "helloWorld": "Hello World",
   "pages": {
+    "auth": {
+      "header": "A membership club for your business"
+    },
     "accountCreated": {
       "title": "Account Created!",
       "message": "Your account has been created successfully. Please check your email to verify your account."
