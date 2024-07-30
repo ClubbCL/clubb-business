@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Recoleta-Bold;
+  font-display: swap;
+  src: url(./assets/fonts/Recoleta-Bold.ttf);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
