@@ -1,10 +1,16 @@
 import { ROUTES } from '@/router';
+import { User as SupabaseUser } from '@supabase/supabase-js';
 import { AuthError, AuthErrorType } from '@utils/errors';
 import { supabase } from '@utils/supabase';
-import { BaseClient } from './types';
+import { BaseClient, User } from './types';
 
 export class SupabaseClient implements BaseClient {
   constructor() {}
+
+  private supabaseUserToUser = (user: SupabaseUser): User => ({
+    id: user.id,
+    email: user.email,
+  });
 
   signup: BaseClient['signup'] = async (user) => {
     const { data, error: supabaseError } = await supabase.auth.signUp({
@@ -21,7 +27,7 @@ export class SupabaseClient implements BaseClient {
     return {
       error,
       data: {
-        ...(data.user && { user: { email: data.user.email, id: data.user.id } }),
+        ...(data.user && { user: this.supabaseUserToUser(data.user) }),
       },
     };
   };
@@ -44,7 +50,7 @@ export class SupabaseClient implements BaseClient {
       error,
       data: {
         ...(session && { session }),
-        ...(user && { user: { email: user.email, id: user.id } }),
+        ...(user && { user: this.supabaseUserToUser(user) }),
       },
     };
   };
@@ -88,7 +94,7 @@ export class SupabaseClient implements BaseClient {
     return {
       error,
       data: {
-        ...(user && { user: { email: user.email, id: user.id } }),
+        ...(user && { user: this.supabaseUserToUser(user) }),
       },
     };
   };

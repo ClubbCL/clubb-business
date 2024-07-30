@@ -1,12 +1,20 @@
+import { ClubbLogo } from '@/components/ClubbLogo';
+import { useAuth } from '@/hooks';
 import { ROUTES } from '@/router';
 import { AuthForm, AuthFormProps } from '@components/Auth';
+import { client } from '@utils/client';
 import { AuthError } from '@utils/errors';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-
-import { useAuth } from '@/hooks';
-import { client } from '@utils/client';
 import { useTranslation } from 'react-i18next';
+import { matchPath, useLocation, useNavigate } from 'react-router-dom';
+
+const getDefaultForm = (pathname: string): Required<AuthFormProps>['defaultForm'] => {
+  if (matchPath(ROUTES.signin, pathname)) return 'signin';
+  if (matchPath(ROUTES.signup, pathname)) return 'signup';
+  if (matchPath(ROUTES.forgotPassword, pathname)) return 'forgot-password';
+  if (matchPath(ROUTES.resetPassword, pathname)) return 'reset-password';
+  return 'signin';
+};
 
 export const Auth = () => {
   const [loading, setLoading] = useState(false);
@@ -17,11 +25,10 @@ export const Auth = () => {
   const navigate = useNavigate();
 
   const pathname = location.pathname;
-  const defaultForm = pathname.slice(1) as Required<AuthFormProps>['defaultForm'];
 
   useEffect(() => {
     if (user) {
-      if (pathname === ROUTES.signin) return navigate(ROUTES.root);
+      if (matchPath(ROUTES.signin, pathname)) return navigate(ROUTES.root);
     }
   }, [user, pathname]);
 
@@ -122,16 +129,24 @@ export const Auth = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <AuthForm
-        className="w-full max-w-sm"
-        loading={loading}
-        defaultForm={defaultForm}
-        onForgotPasswordSubmit={onForgotPasswordSubmit}
-        onSigninSubmit={onSigninHandler}
-        onResetPasswordSubmit={onResetPasswordSubmit}
-        onSignupSubmit={onSignupHandler}
-      />
+    <div className="flex flex-col md:flex-row items-center justify-center h-screen bg-gray-100">
+      <div className="bg-[#f2f491] flex flex-col flex-1 h-screen p-4">
+        <ClubbLogo />
+        <p className="font-paytone-one text-[40px] md:text-[60px] lg:text-[90px] justify-center items-center text-center text-[#1a1944] flex flex-1">
+          {t('pages.auth.header')}
+        </p>
+      </div>
+      <div className="flex flex-1 items-center justify-center p-4 w-full">
+        <AuthForm
+          className="w-full max-w-sm"
+          loading={loading}
+          defaultForm={getDefaultForm(pathname)}
+          onForgotPasswordSubmit={onForgotPasswordSubmit}
+          onSigninSubmit={onSigninHandler}
+          onResetPasswordSubmit={onResetPasswordSubmit}
+          onSignupSubmit={onSignupHandler}
+        />
+      </div>
     </div>
   );
 };
