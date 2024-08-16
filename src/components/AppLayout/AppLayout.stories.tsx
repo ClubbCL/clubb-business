@@ -23,7 +23,7 @@ export const Primary: Story = {
     header: (
       <div className="bg-[#508C9B] text-white flex w-full h-14 items-center justify-center opacity-50">Header</div>
     ),
-    main: (
+    children: (
       <div className="bg-[#EEEEEE] text-black flex flex-col flex-1 items-center justify-center">
         <div className="h-[300px] flex justify-center items-center">Main</div>
         <div className="h-[1000px] p-4">

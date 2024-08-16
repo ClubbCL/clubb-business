@@ -28,7 +28,7 @@ export const Auth = () => {
 
   useEffect(() => {
     if (user) {
-      if (matchPath(ROUTES.signin, pathname)) return navigate(ROUTES.root);
+      if (matchPath(ROUTES.signin, pathname)) return navigate(ROUTES.home);
     }
   }, [user, pathname]);
 

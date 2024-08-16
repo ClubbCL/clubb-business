@@ -47,7 +47,7 @@ export const HelpMenu: React.FC<HelpMenuItemProps> = (props) => {
 
             return (
               <DropdownMenuItem key={item.id} className="cursor-pointer">
-                <a href={item.href} target="_blank" className="flex items-center">
+                <a href={item.href} target="_blank" className="flex w-full items-center">
                   <Icon className="mr-2 h-4 w-4" strokeWidth={2} />
                   <span>{item.title}</span>
                 </a>

@@ -22,6 +22,26 @@
     "sidebar": {
       "clubbSelector": {
         "placeholder": "Selecciona un clubb"
+      },
+      "navigation": {
+        "home": "Home",
+        "data": "Data",
+        "members": "Miembros",
+        "analytics": "Analytics",
+        "settings": "Configuración",
+        "points": "Puntos",
+        "levels": "Niveles",
+        "myTeam": "Mi Equipo",
+        "help": "Ayuda",
+        "share": "Share",
+        "qrDownload": "Descargar QR",
+        "shareLink": "Compartir Enlace"
+      },
+      "helpMenu": {
+        "title": "Ayuda",
+        "documentation": "Documentación",
+        "helpCenter": "Centro de Ayuda",
+        "blog": "Blog"
       }
     }
   },
