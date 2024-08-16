@@ -18,6 +18,13 @@
       "continue": "Continue"
     }
   },
+  "components": {
+    "sidebar": {
+      "clubbSelector": {
+        "placeholder": "Select a clubb"
+      }
+    }
+  },
   "errors": {
     "general": "Ups! Something went wrong, please try again later."
   },

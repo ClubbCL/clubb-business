@@ -18,6 +18,13 @@
       "continue": "Continuar"
     }
   },
+  "components": {
+    "sidebar": {
+      "clubbSelector": {
+        "placeholder": "Selecciona un clubb"
+      }
+    }
+  },
   "errors": {
     "general": "¡Ups! Algo salió mal, por favor inténtalo de nuevo más tarde."
   },
