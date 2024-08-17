@@ -18,6 +18,43 @@
       "continue": "Continue"
     }
   },
+  "components": {
+    "topbar": {
+      "userMenu": {
+        "settings": "Settings",
+        "profile": "Profile",
+        "logout": "Logout"
+      },
+      "banner": {
+        "freeApp": "Clubb is completely free, you can create your own Clubb and manage it: for free."
+      }
+    },
+    "sidebar": {
+      "clubbSelector": {
+        "placeholder": "Select a clubb"
+      },
+      "navigation": {
+        "home": "Home",
+        "data": "Data",
+        "members": "Members",
+        "analytics": "Analytics",
+        "settings": "Settings",
+        "points": "Points",
+        "levels": "Levels",
+        "myTeam": "My Team",
+        "help": "Help",
+        "share": "Share",
+        "qrDownload": "Download QR",
+        "shareLink": "Share Link"
+      },
+      "helpMenu": {
+        "title": "Help",
+        "documentation": "Documentation",
+        "helpCenter": "Help Center",
+        "blog": "Blog"
+      }
+    }
+  },
   "errors": {
     "general": "Ups! Something went wrong, please try again later."
   },
