@@ -19,6 +19,16 @@
     }
   },
   "components": {
+    "topbar": {
+      "userMenu": {
+        "settings": "Settings",
+        "profile": "Profile",
+        "logout": "Logout"
+      },
+      "banner": {
+        "freeApp": "Clubb is completely free, you can create your own Clubb and manage it: for free."
+      }
+    },
     "sidebar": {
       "clubbSelector": {
         "placeholder": "Select a clubb"

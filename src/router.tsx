@@ -1,5 +1,5 @@
 import { ProtectedRoute } from '@components';
-import { AccountCreated, Auth, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
+import { AccountCreated, Auth, FakePage, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const ROUTES = {
@@ -20,6 +20,8 @@ export const ROUTES = {
   help: '/help',
   qrDownload: '/qr-download',
   shareLink: '/share-link',
+  settings: '/settings',
+  profile: '/profile',
 };
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
@@ -33,39 +35,47 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
     children: [
       {
         path: ROUTES.home,
-        element: <div>Home</div>,
+        element: <FakePage title="Home" />,
       },
       {
         path: ROUTES.members,
-        element: <div>Members</div>,
+        element: <FakePage title="Members" />,
       },
       {
         path: ROUTES.analytics,
-        element: <div>Analytics</div>,
+        element: <FakePage title="Analytics" />,
       },
       {
         path: ROUTES.points,
-        element: <div>Points</div>,
+        element: <FakePage title="Points" />,
       },
       {
         path: ROUTES.levels,
-        element: <div>Levels</div>,
+        element: <FakePage title="Levels" />,
       },
       {
         path: ROUTES.myTeam,
-        element: <div>My Team</div>,
+        element: <FakePage title="My Team" />,
       },
       {
         path: ROUTES.help,
-        element: <div>Help</div>,
+        element: <FakePage title="Help" />,
       },
       {
         path: ROUTES.qrDownload,
-        element: <div>QR Download</div>,
+        element: <FakePage title="QR Download" />,
       },
       {
         path: ROUTES.shareLink,
-        element: <div>Share</div>,
+        element: <FakePage title="Share Link" />,
+      },
+      {
+        path: ROUTES.settings,
+        element: <FakePage title="Settings" />,
+      },
+      {
+        path: ROUTES.profile,
+        element: <FakePage title="Profile" />,
       },
     ],
   },

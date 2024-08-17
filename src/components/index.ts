@@ -6,3 +6,4 @@ export * from './ClubbLogo';
 export * from './HelpMenu';
 export * from './ProtectedRoute';
 export * from './Sidebar';
+export * from './TopBar';

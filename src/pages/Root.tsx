@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks';
 import { ROUTES } from '@/router';
 import { AppLayout } from '@components/AppLayout';
 import { NavSection, Sidebar } from '@components/Sidebar';
-import { Button } from '@ui/button';
+import { Banner, TopBar } from '@components/TopBar';
 import { useTranslation } from 'react-i18next';
 import { matchPath, Outlet, useLocation } from 'react-router-dom';
 
@@ -157,18 +157,38 @@ export const Root = () => {
     />
   );
 
-  return (
-    <AppLayout
-      className="h-screen"
-      nav={sidebar}
-      header={
-        <div className="flex w-full h-14 items-center justify-end px-5">
-          <span className="mr-4">{user?.email}</span>
-          <Button onClick={() => signOut()}>Signout</Button>
-        </div>
-      }
+  const topbar = (
+    <TopBar
+      user={user?.email || ''}
+      userMenu={[
+        {
+          id: 'settings',
+          icon: 'settings',
+          title: t('components.topbar.userMenu.settings'),
+          to: ROUTES.settings,
+        },
+        {
+          id: 'profile',
+          icon: 'user',
+          title: t('components.topbar.userMenu.profile'),
+          to: ROUTES.profile,
+          separator: true,
+        },
+        {
+          id: 'logout',
+          icon: 'logout',
+          title: t('components.topbar.userMenu.logout'),
+          onClick: signOut,
+        },
+      ]}
     >
-      <div className="px-5">
+      <Banner type="info" message={t('components.topbar.banner.freeApp')} />
+    </TopBar>
+  );
+
+  return (
+    <AppLayout className="h-screen" nav={sidebar} header={topbar}>
+      <div className="px-12">
         <Outlet />
       </div>
     </AppLayout>
