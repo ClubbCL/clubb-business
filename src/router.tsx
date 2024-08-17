@@ -1,5 +1,5 @@
 import { ProtectedRoute } from '@components';
-import { AccountCreated, Auth, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
+import { AccountCreated, Auth, FakePage, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const ROUTES = {
@@ -11,6 +11,17 @@ export const ROUTES = {
   restPasswordSuccess: '/reset-password-success',
   resetPassword: '/reset-password',
   forgotPassword: '/forgot-password',
+  home: '/home',
+  members: '/members',
+  analytics: '/analytics',
+  points: '/points',
+  levels: '/levels',
+  myTeam: '/my-team',
+  help: '/help',
+  qrDownload: '/qr-download',
+  shareLink: '/share-link',
+  settings: '/settings',
+  profile: '/profile',
 };
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
@@ -21,6 +32,52 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
         <Root />
       </ProtectedRoute>
     ),
+    children: [
+      {
+        path: ROUTES.home,
+        element: <FakePage title="Home" />,
+      },
+      {
+        path: ROUTES.members,
+        element: <FakePage title="Members" />,
+      },
+      {
+        path: ROUTES.analytics,
+        element: <FakePage title="Analytics" />,
+      },
+      {
+        path: ROUTES.points,
+        element: <FakePage title="Points" />,
+      },
+      {
+        path: ROUTES.levels,
+        element: <FakePage title="Levels" />,
+      },
+      {
+        path: ROUTES.myTeam,
+        element: <FakePage title="My Team" />,
+      },
+      {
+        path: ROUTES.help,
+        element: <FakePage title="Help" />,
+      },
+      {
+        path: ROUTES.qrDownload,
+        element: <FakePage title="QR Download" />,
+      },
+      {
+        path: ROUTES.shareLink,
+        element: <FakePage title="Share Link" />,
+      },
+      {
+        path: ROUTES.settings,
+        element: <FakePage title="Settings" />,
+      },
+      {
+        path: ROUTES.profile,
+        element: <FakePage title="Profile" />,
+      },
+    ],
   },
   {
     path: ROUTES.restPasswordSuccess,
