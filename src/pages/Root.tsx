@@ -187,7 +187,7 @@ export const Root = () => {
   );
 
   return (
-    <AppLayout className="h-screen" nav={sidebar} header={topbar}>
+    <AppLayout className="h-screen min-w-[1280px] min-h-[640px]" nav={sidebar} header={topbar}>
       <div className="px-12">
         <Outlet />
       </div>
