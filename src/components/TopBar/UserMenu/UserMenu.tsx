@@ -40,7 +40,7 @@ export const UserMenu: React.FC<UserMenuProps> = (props) => {
   return (
     <DropdownMenu onOpenChange={(o) => setOpen(o)} open={open}>
       <DropdownMenuTrigger asChild className="text-gray-600">
-        <Button variant="ghost" className="flex">
+        <Button variant="ghost" className="flex" onClick={() => setOpen(true)}>
           <CircleUserRound size={16} strokeWidth={2.5} />
           <span className="flex flex-1 ml-2">{title}</span>
         </Button>
