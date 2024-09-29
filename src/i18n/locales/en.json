@@ -19,6 +19,13 @@
     }
   },
   "components": {
+    "filter": {
+      "level": "Level"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
     "topbar": {
       "userMenu": {
         "settings": "Settings",
@@ -52,6 +59,23 @@
         "documentation": "Documentation",
         "helpCenter": "Help Center",
         "blog": "Blog"
+      }
+    },
+    "tables": {
+      "members": {
+        "headers": {
+          "user": "User",
+          "points": "Points",
+          "purchases": "Purchases",
+          "level": "Level",
+          "visits": "Visits Qty",
+          "lastVisit": "Last Visit",
+          "selectAll": "Select all members",
+          "selectRow": "Select member"
+        },
+        "actions": {
+          "block": "Block user"
+        }
       }
     }
   },
