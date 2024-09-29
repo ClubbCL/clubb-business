@@ -16,6 +16,16 @@ type BaseClientResponse<Data, Err = Error> = {
   error: Err | null;
 };
 
+export type Member = {
+  id: string;
+  username: string;
+  points: number;
+  totalPurchases: number;
+  level: string;
+  visits: number;
+  lastVisit: Date;
+};
+
 type OnAuthStatusChangeUnsubscribe = () => void;
 
 export type Session = SupabaseSession;
