@@ -1,5 +1,5 @@
 import { ProtectedRoute } from '@components';
-import { AccountCreated, Auth, FakePage, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
+import { AccountCreated, Auth, FakePage, Members, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const ROUTES = {
@@ -39,7 +39,7 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
       },
       {
         path: ROUTES.members,
-        element: <FakePage title="Members" />,
+        element: <Members />,
       },
       {
         path: ROUTES.analytics,
