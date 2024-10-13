@@ -14,6 +14,7 @@ import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-r
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PaginationButton } from '../Pagination';
+import { PageSelector } from './PagesSelector';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -22,7 +23,13 @@ interface DataTableProps<TData, TValue> {
   columnFilters?: ColumnFiltersState;
 }
 
-export function DataTable<TData, TValue>({ columns, data, filter, columnFilters }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({
+  columns,
+  data,
+  filter,
+  columnFilters,
+  setRowsSelected,
+}: DataTableProps<TData, TValue> & { setRowsSelected: (rowsSelected: number) => void }) {
   const [pagination, setPagination] = useState({
     pageIndex: 0, //initial page index
     pageSize: 10, //default page size
@@ -51,6 +58,8 @@ export function DataTable<TData, TValue>({ columns, data, filter, columnFilters 
       globalFilter: filter,
     },
   });
+
+  setRowsSelected(table.getFilteredSelectedRowModel().rows.length);
 
   const { pageIndex } = pagination;
   const pageCount = table.getPageCount();
@@ -109,7 +118,7 @@ export function DataTable<TData, TValue>({ columns, data, filter, columnFilters 
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-center space-x-2 py-4">
+      <div className="flex items-center justify-center space-x-2 py-4 relative">
         <PaginationButton onClick={() => table.firstPage()} disabled={!table.getCanPreviousPage()}>
           <ChevronsLeft size={16} />
         </PaginationButton>
@@ -130,6 +139,12 @@ export function DataTable<TData, TValue>({ columns, data, filter, columnFilters 
         <PaginationButton onClick={() => table.lastPage()} disabled={!table.getCanNextPage()}>
           <ChevronsRight size={16} />
         </PaginationButton>
+        <PageSelector
+          rowsSelection={[10, 25, 50]}
+          value={pagination.pageSize.toString()}
+          onValueChange={(value) => setPagination({ ...pagination, pageSize: parseInt(value) })}
+          triggerClassName="absolute right-0"
+        />
       </div>
     </div>
   );
