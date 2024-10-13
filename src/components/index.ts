@@ -3,6 +3,7 @@ export * from './Auth';
 export * from './AuthForm';
 export * from './ClubAvatar';
 export * from './ClubbLogo';
+export * from './DataTable';
 export * from './FilterSelector';
 export * from './HelpMenu';
 export * from './MembersTable';
