@@ -57,8 +57,8 @@ export const useMembersColumns = (props: UseMemerColumnsProps): ColumnDef<Member
       header: ({ table }) => (
         <Checkbox
           className="bg-white ml-6"
-          checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate')}
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          checked={table.getIsAllRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate')}
+          onCheckedChange={(value) => table.toggleAllRowsSelected(!!value)}
           aria-label={t('components.tables.members.headers.selectAll')}
         />
       ),

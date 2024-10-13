@@ -1,5 +1,10 @@
 {
   "helloWorld": "Hola Mundo",
+  "common": {
+    "export": "Export",
+    "blockUser": "Bloquear Usuario",
+    "searchPlaceholder": "Buscar..."
+  },
   "pages": {
     "auth": {
       "header": "Un clubb de miembros para tu negocio"
@@ -62,6 +67,9 @@
       }
     },
     "tables": {
+      "common": {
+        "rowsSelector": "{{ rows }} filas"
+      },
       "members": {
         "headers": {
           "user": "Usuario",
