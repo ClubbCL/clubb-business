@@ -21,6 +21,44 @@
       "title": "¡Restablecimiento de Contraseña Exitoso!",
       "message": "Tu contraseña ha sido restablecida exitosamente. Serás redirigido al panel de control en {{secondsLeft}} segundos.",
       "continue": "Continuar"
+    },
+    "points": {
+      "rulesTitle": "Reglas para sumar pesos {{companyName}}",
+      "box1": {
+        "title": "Porcentaje de la Compra:",
+        "detail": "Los miembros sumarán el {{percentage}}% de su compra o consumo."
+      },
+      "box2": {
+        "title": "Ejemplo:",
+        "example": "{{base}} = {{earn}} ({{currency}} {{companyName}})",
+        "detail": "Cada {{base}} de consumo, el cliente sumará {{earn}} para utilizar en tu negocio."
+      },
+      "howToEarn": {
+        "title": "¿Cómo sumar Pesos {{companyName}}?",
+        "p1": "Únicamente los colaboradores que hayas asignado podrán sumar o canjear pesos (Ir a <a>Mi equipo</a>). Desde la App móvil de Clubb, debes ir a la sección Pesos y elegir la opción Sumar, ingresa el RUT y el monto. Eso es todo!",
+        "p2": "Revisa la documentación complementaria para definir la mejor forma de sumar pesos.",
+        "goToDocs": "Ir a la documentación",
+        "goToSupport": "Ir a Soporte"
+      }
+    },
+    "redeem": {
+      "enableRedeem": {
+        "title": "Los miembros de tu club podrán usar sus Pesos {{companyName}} acumulados para pagar.",
+        "subTitle": "Si desactivas los canjes, no podrás agregar nuevos miembros y tu club quedará bloqueado.",
+        "enable": "Canjes activados"
+      },
+      "box1": {
+        "title": "Canjes",
+        "example": "{{amount}} (Pesos {{companyName}}) = {{equal}} ({{currency}})",
+        "detail": "Si el miembro tiene {{companyPoints}} pesos {{companyName}}, podrá descontar {{currency}} al pagar en tu negocio."
+      },
+      "howToRedeem": {
+        "title": "¿Cómo se canjean los Pesos {{companyName}}?",
+        "p1": "Solo los colaboradores que asignes podrán sumar o canjear pesos (Ir a <a>Mi equipo</a>). Desde la App móvil de Clubb, ve a la sección \"Pesos\", selecciona \"Canjear\", ingresa el RUT y el monto. Luego, espera la confirmación del miembro en su App. Listo!",
+        "p2": "Revisa la documentación complementaria sobre el funcionamiento de los canjes.",
+        "goToDocs": "Ir a la documentación",
+        "goToSupport": "Ir a Soporte"
+      }
     }
   },
   "components": {
@@ -51,9 +89,11 @@
         "members": "Miembros",
         "analytics": "Analytics",
         "settings": "Configuración",
-        "points": "Puntos",
+        "points": "Pesos {{companyName}}",
         "levels": "Niveles",
-        "myTeam": "Mi Equipo",
+        "myTeam": "Colaboradores",
+        "companyProfile": "Perfil",
+        "redeem": "Canjes",
         "help": "Ayuda",
         "share": "Share",
         "qrDownload": "Descargar QR",

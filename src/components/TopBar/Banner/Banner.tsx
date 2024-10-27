@@ -29,17 +29,28 @@ export type BannerType = keyof typeof bannerType;
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   type: BannerType;
   message: string;
+  closeHandler?: () => void;
 }
 
 export const Banner: React.FC<BannerProps> = (props) => {
-  const { type, message } = props;
+  const { type, message, closeHandler, className, ...divProps } = props;
 
   const { icon: Icon, color: iconColor, background } = bannerType[type];
 
   return (
-    <div className={cn(background, 'rounded-lg flex h-12 items-center whitespace-nowrap w-min px-4')}>
+    <div
+      className={cn(background, 'rounded-lg flex h-12 items-center whitespace-nowrap w-min px-4', className)}
+      {...divProps}
+    >
       <Icon size={16} strokeWidth={2} className={cn(iconColor, 'mr-1')} />
-      <span className="text-sm text-gray-900 text-ellipsis overflow-hidden">{message}</span>
+      <span className={cn('text-sm text-gray-900 text-ellipsis overflow-hidden', closeHandler && 'mr-4')}>
+        {message}
+      </span>
+      {closeHandler && (
+        <button onClick={closeHandler} className="ml-auto">
+          <CircleX size={16} strokeWidth={2} className="text-gray-600" />
+        </button>
+      )}
     </div>
   );
 };
