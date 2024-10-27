@@ -11,6 +11,9 @@ const meta = {
   argTypes: {
     members: { control: { type: 'object' } },
     onMemberAction: { action: 'onMemberAction' },
+    setRowsSelected: { action: 'setRowsSelected' },
+    levelFilter: { control: { type: 'text' } },
+    searchValue: { control: { type: 'text' } },
   },
 } satisfies Meta<typeof MembersTable>;
 
@@ -21,5 +24,6 @@ export const Primary: Story = {
   args: {
     members: faker.fakeMembers(250),
     onMemberAction: fn(),
+    setRowsSelected: fn(),
   },
 };

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import { Banner } from './Banner';
 const meta = {
@@ -9,6 +10,9 @@ const meta = {
     type: {
       control: 'select',
       options: ['info', 'warning', 'error', 'success'],
+      closeHandler: {
+        action: 'closeHandler',
+      },
     },
     message: {
       control: 'text',
@@ -23,5 +27,6 @@ export const Primary: Story = {
   args: {
     type: 'info',
     message: 'Clubb es completamente gratuito, puedes crear tu propio Clubb y administrarlo: gratis.',
+    closeHandler: fn(),
   },
 };

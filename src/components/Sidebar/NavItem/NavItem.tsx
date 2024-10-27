@@ -1,6 +1,19 @@
 import ZapIcon from '@/assets/icons/zap.svg';
 import { cn } from '@/lib/utils';
-import { CircleHelp, House, LineChart, Medal, QrCode, Share, SlidersVertical, UserCog, Users } from 'lucide-react';
+import {
+  CircleHelp,
+  Coins,
+  HandCoins,
+  House,
+  LineChart,
+  Medal,
+  QrCode,
+  Share,
+  SlidersVertical,
+  Store,
+  UserCog,
+  Users,
+} from 'lucide-react';
 import { Link, LinkProps } from 'react-router-dom';
 
 const iconKeyToComponent = {
@@ -13,6 +26,9 @@ const iconKeyToComponent = {
   'circle-help': CircleHelp,
   'qr-code': QrCode,
   share: Share,
+  store: Store,
+  coins: Coins,
+  'hand-coins': HandCoins,
 };
 
 export interface NavItemProps extends React.HTMLAttributes<HTMLLIElement> {
