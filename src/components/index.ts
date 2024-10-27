@@ -8,6 +8,7 @@ export * from './FilterSelector';
 export * from './HelpMenu';
 export * from './MembersTable';
 export * from './Pagination';
+export * from './PercentageInput';
 export * from './ProtectedRoute';
 export * from './Sidebar';
 export * from './TopBar';

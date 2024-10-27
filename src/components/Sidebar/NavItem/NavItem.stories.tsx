@@ -9,7 +9,20 @@ const meta = {
   argTypes: {
     icon: {
       control: 'select',
-      options: ['house', 'users', 'chart-line', 'medal', 'sliders', 'user-config', 'circle-help', 'qr-code', 'share'],
+      options: [
+        'house',
+        'users',
+        'chart-line',
+        'medal',
+        'sliders',
+        'user-config',
+        'circle-help',
+        'qr-code',
+        'share',
+        'store',
+        'coins',
+        'hand-coins',
+      ],
     },
     isSelected: {
       control: 'boolean',

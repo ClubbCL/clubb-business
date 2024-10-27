@@ -21,6 +21,44 @@
       "title": "Password Reset Successful!",
       "message": "Your password has been reset successfully. You will be redirected to the dashboard in a {{secondsLeft}} seconds.",
       "continue": "Continue"
+    },
+    "points": {
+      "rulesTitle": "Rules to earn points {{companyName}}",
+      "box1": {
+        "title": "Purchase Percentage:",
+        "detail": "Members will earn {{percentage}}% of their purchase or consumption."
+      },
+      "box2": {
+        "title": "Example:",
+        "example": "{{base}} = {{earn}} ({{currency}} {{companyName}})",
+        "detail": "For every {{base}} of consumption, the customer will earn {{earn}} to use in your business."
+      },
+      "howToEarn": {
+        "title": "How to earn {{companyName}} points?",
+        "p1": "Only the collaborators you have assigned will be able to earn or redeem points (Go to <a>My team</a>). From the Clubb mobile app, you must go to the Points section and choose the Earn option, enter the RUT and the amount. That's it!",
+        "p2": "Check the complementary documentation to define the best way to earn points.",
+        "goToDocs": "Go to documentation",
+        "goToSupport": "Go to Support"
+      }
+    },
+    "redeem": {
+      "enableRedeem": {
+        "title": "The members of your club will be able to use their accumulated {{companyName}} points to pay.",
+        "subTitle": "If you disable redemptions, you will not be able to add new members and your club will be blocked.",
+        "enable": "Redemptions enabled"
+      },
+      "box1": {
+        "title": "Redemptions",
+        "example": "{{amount}} (Pesos {{companyName}}) = {{equal}} ({{currency}})",
+        "detail": "If the member has {{companyPoints}} {{companyName}} points, they can deduct {{currency}} when paying in your business."
+      },
+      "howToRedeem": {
+        "title": "How to redeem {{companyName}} points?",
+        "p1": "Only the collaborators you assign will be able to earn or redeem points (Go to <a>My team</a>). From the Clubb mobile app, go to the \"Points\" section, select \"Redeem\", enter the RUT and the amount. Then, wait for the member's confirmation on their App. Ready!",
+        "p2": "Check the complementary documentation on how redemptions work.",
+        "goToDocs": "Go to documentation",
+        "goToSupport": "Go to Support"
+      }
     }
   },
   "components": {
@@ -51,9 +89,11 @@
         "members": "Members",
         "analytics": "Analytics",
         "settings": "Settings",
-        "points": "Points",
+        "points": "Points {{companyName}}",
         "levels": "Levels",
-        "myTeam": "My Team",
+        "myTeam": "Collaborators",
+        "companyProfile": "Profile",
+        "redeem": "Redeem",
         "help": "Help",
         "share": "Share",
         "qrDownload": "Download QR",

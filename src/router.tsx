@@ -1,5 +1,15 @@
 import { ProtectedRoute } from '@components';
-import { AccountCreated, Auth, FakePage, Members, ResetPasswordEmailSent, ResetPasswordSuccess, Root } from '@pages';
+import {
+  AccountCreated,
+  Auth,
+  FakePage,
+  Members,
+  Points,
+  Redeem,
+  ResetPasswordEmailSent,
+  ResetPasswordSuccess,
+  Root,
+} from '@pages';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const ROUTES = {
@@ -22,6 +32,8 @@ export const ROUTES = {
   shareLink: '/share-link',
   settings: '/settings',
   profile: '/profile',
+  companyProfile: '/company-profile',
+  redeem: '/redeem',
 };
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
@@ -47,7 +59,7 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
       },
       {
         path: ROUTES.points,
-        element: <FakePage title="Points" />,
+        element: <Points />,
       },
       {
         path: ROUTES.levels,
@@ -76,6 +88,14 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
       {
         path: ROUTES.profile,
         element: <FakePage title="Profile" />,
+      },
+      {
+        path: ROUTES.companyProfile,
+        element: <FakePage title="Company Profile" />,
+      },
+      {
+        path: ROUTES.redeem,
+        element: <Redeem />,
       },
     ],
   },
