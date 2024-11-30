@@ -187,6 +187,30 @@
         "passwordDoesNotMatch": "Las contraseñas no coinciden",
         "userAlreadyExists": "La dirección de correo electrónico ya está en uso"
       }
+    },
+    "profile": {
+      "labels": {
+        "title": "¡Ya eres parte de Clubb! <span>Ahora completa tu perfil.</span>",
+        "uploadAvatar": "Subir foto",
+        "fullName": "Nombre Completo",
+        "username": "Nombre de usuario",
+        "profileUrl": "Tu perfil será www.clubb.cl/{{username}}",
+        "submit": "Continuar",
+        "emailNotifications": "Acepto recibir comunicaciones de Clubb que sean relevantes para mi negocio."
+      },
+      "placeholders": {
+        "fullName": "Ej. Juan Lopez",
+        "username": "Ej. juan_lopez"
+      },
+      "errors": {
+        "avatarFileType": "El archivo debe ser una imagen",
+        "avatarFileSize": "El tamaño del archivo no puede superar los 5MB",
+        "minNameLength": "El nombre debe tener al menos 2 caracteres",
+        "maxNameLength": "El nombre debe tener como máximo 50 caracteres",
+        "minUsernameLength": "El nombre de usuario debe tener al menos 2 caracteres",
+        "maxUsernameLength": "El nombre de usuario debe tener como máximo 50 caracteres",
+        "usernameSpecialChars": "El nombre de usuario no puede contener caracteres especiales, solo letras, números y guiones bajos"
+      }
     }
   }
 }

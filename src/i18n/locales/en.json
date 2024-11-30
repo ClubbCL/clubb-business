@@ -187,6 +187,30 @@
         "passwordDoesNotMatch": "Passwords do not match",
         "userAlreadyExists": "The email address is already in use"
       }
+    },
+    "profile": {
+      "labels": {
+        "title": "You're part of Clubb! <span>Now complete your profile.</span>",
+        "uploadAvatar": "Upload photo",
+        "fullName": "Full Name",
+        "username": "Username",
+        "profileUrl": "Your profile will be www.clubb.cl/{{username}}",
+        "submit": "Continue",
+        "emailNotifications": "I want to receive email notifications from Clubb"
+      },
+      "placeholders": {
+        "fullName": "Ej. Juan Lopez",
+        "username": "Ej. juan_lopez"
+      },
+      "errors": {
+        "avatarFileType": "The file must be an image",
+        "avatarFileSize": "The file must be less than 5MB",
+        "minNameLength": "Name must be at least 2 characters long",
+        "maxNameLength": "Name must be at most 50 characters long",
+        "minUsernameLength": "Username must be at least 2 characters long",
+        "maxUsernameLength": "Username must be at most 50 characters long",
+        "usernameSpecialChars": "Username must not contain special characters, only letters, numbers and underscores"
+      }
     }
   }
 }
