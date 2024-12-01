@@ -196,11 +196,15 @@
         "username": "Username",
         "profileUrl": "Your profile will be www.clubb.cl/{{username}}",
         "submit": "Continue",
-        "emailNotifications": "I want to receive email notifications from Clubb"
+        "emailNotifications": "I want to receive email notifications from Clubb",
+        "rut": "RUT",
+        "rutDescription": "Without dots and with hyphen.",
+        "birthday": "Birthday"
       },
       "placeholders": {
         "fullName": "Ej. Juan Lopez",
-        "username": "Ej. juan_lopez"
+        "username": "Ej. juan_lopez",
+        "rut": "12345678-2"
       },
       "errors": {
         "avatarFileType": "The file must be an image",
@@ -209,7 +213,8 @@
         "maxNameLength": "Name must be at most 50 characters long",
         "minUsernameLength": "Username must be at least 2 characters long",
         "maxUsernameLength": "Username must be at most 50 characters long",
-        "usernameSpecialChars": "Username must not contain special characters, only letters, numbers and underscores"
+        "usernameSpecialChars": "Username must not contain special characters, only letters, numbers and underscores",
+        "rutInvalid": "Invalid RUT"
       }
     }
   }
