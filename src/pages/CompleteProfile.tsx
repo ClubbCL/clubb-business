@@ -1,11 +1,14 @@
 import { ProfileFormProps, ProfileFormValues } from '@/components/Auth/ProfileForm';
 import { ProfileMetaFormProps } from '@/components/Auth/ProfileMetaForm';
 import { ROUTES } from '@/router';
-import { useEffect, useState } from 'react';
+import { supabase } from '@utils/supabase';
+import { useCallback, useEffect, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { matchPath, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ClubbLogo from '@/assets/icons/clubb_simple.svg';
+import { useAuth } from '@/hooks/useAuth';
+import { hash } from '@/utils';
 
 export interface ParentOutletContext {
   formState: ProfileFormValues;
@@ -16,6 +19,7 @@ export interface ParentOutletContext {
 export const CompleteProfile = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const [formState, setFormState] = useState<ProfileFormValues>({
     name: '',
@@ -33,17 +37,62 @@ export const CompleteProfile = () => {
     }
   }, []);
 
-  const onSubmitStep1: ProfileFormProps['onSubmit'] = (values) => {
-    setFormState((prev) => ({ ...prev, ...values }));
+  const onSubmitStep1: ProfileFormProps['onSubmit'] = useCallback(
+    async (values) => {
+      if (!user) return;
 
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
-        navigate(ROUTES.completeProfileStep2);
+      const { data: isUsernamaTaken, error } = await supabase.rpc('username_already_taken', {
+        username_input: values.username,
       });
-    } else {
-      navigate(ROUTES.completeProfileStep2);
-    }
-  };
+
+      if (error) {
+        console.error('Error checking username', error);
+        return;
+      }
+
+      if (isUsernamaTaken) {
+        console.error('Username already taken');
+        return;
+      }
+
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          navigate(ROUTES.completeProfileStep2);
+        });
+      } else {
+        navigate(ROUTES.completeProfileStep2);
+      }
+
+      setFormState((prev) => ({ ...prev, ...values }));
+
+      const avatarFile = values.avatar?.[0];
+      const avatarId = await hash(user.id);
+
+      const avatarFragment = avatarFile ? { avatar: avatarId } : {};
+
+      const { error: updateUserError } = await supabase
+        .from('users')
+        .update({ username: values.username, name: values.name, ...avatarFragment })
+        .eq('id', user.id);
+
+      if (updateUserError) {
+        console.error('Error updating user', updateUserError);
+        return;
+      }
+
+      if (avatarFile) {
+        const { error: uploadAvatarError } = await supabase.storage
+          .from('clubb_business_public')
+          .upload(`public/${avatarId}`, avatarFile, { upsert: true });
+
+        if (uploadAvatarError) {
+          console.error('Error uploading avatar', uploadAvatarError);
+          return;
+        }
+      }
+    },
+    [user]
+  );
 
   const onSubmitStep2: ProfileMetaFormProps['onSubmit'] = (values) => {
     const fullFormState = { ...formState, ...values };
