@@ -11,4 +11,6 @@ export * from './Pagination';
 export * from './PercentageInput';
 export * from './ProtectedRoute';
 export * from './Sidebar';
+export * from './Stepper';
 export * from './TopBar';
+export * from './VerticalStepper';
