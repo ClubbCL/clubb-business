@@ -31,6 +31,7 @@
       "box2": {
         "title": "Ejemplo:",
         "example": "{{base}} = {{earn}} ({{currency}} {{companyName}})",
+        "example2": "{{base}} = {{earn}}",
         "detail": "Cada {{base}} de consumo, el cliente sumará {{earn}} para utilizar en tu negocio."
       },
       "howToEarn": {
@@ -215,6 +216,49 @@
         "maxUsernameLength": "El nombre de usuario debe tener como máximo 50 caracteres",
         "usernameSpecialChars": "El nombre de usuario no puede contener caracteres especiales, solo letras, números y guiones bajos",
         "rutInvalid": "El RUT ingresado no es válido"
+      }
+    },
+    "clubbSetup": {
+      "location": {
+        "countryLabel": "País de operación",
+        "country": "País",
+        "mainLocation": "Ubicación principal",
+        "state": "Región",
+        "address1": "Ingresa calle y número",
+        "address2": "Ingresa piso/oficina (opcional)",
+        "submit": "Continuar"
+      },
+      "information": {
+        "companyNameLabel": "Nombre legal de la empresa / Razón social",
+        "companyNamePlaceholder": "Ingresa el nombre de la empresa",
+        "idLabel": "RUT empresa",
+        "idPlaceholder": "12345678-9",
+        "idSubLabel": "Sin puntos y con guión",
+        "typeLabel": "Tipo de empresa",
+        "typePlaceholder": "Selecciona una categoría",
+        "submit": "Siguiente"
+      },
+      "points": {
+        "title": "Pesos clubb",
+        "subtitle": "Define cómo se acumularán pesos en tu clubb.",
+        "submit": "Siguiente"
+      },
+      "profile": {
+        "nameLabel": "Nombre del clubb",
+        "namePlaceholder": "Clubb",
+        "accountLabel": "Cuenta",
+        "accountPlaceholder": "@clubb",
+        "accountSubLabel": "Tu enlace público será www.clubb.cl/@{{account}}",
+        "submit": "Siguiente"
+      },
+      "verification": {
+        "phoneLabel": "Número de teléfono de la empresa",
+        "phonePlaceholder": "+56 9 12345678",
+        "emailLabel": "Email de la empresa",
+        "emailPlaceholder": "marketing@tuempresa.com",
+        "emailSubLabel": "Asegúrate de tener acceso a este email para verificar la cuenta del Clubb.",
+        "termsAndConditions": "Acepto los <a>Términos y Condiciones.</a> Aseguro que los miembros del Clubb podrán pagar utilizando sus pesos acumulados en mi negocio.",
+        "submit": "Verificar"
       }
     }
   }

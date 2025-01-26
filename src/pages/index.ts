@@ -1,5 +1,6 @@
 export * from './AccountCreated';
 export * from './Auth';
+export * from './ClubbSignup';
 export * from './CompleteProfile';
 export * from './FakePage';
 export * from './Members';

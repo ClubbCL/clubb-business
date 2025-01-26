@@ -2,6 +2,7 @@ import { ProtectedRoute } from '@components';
 import {
   AccountCreated,
   Auth,
+  ClubbSignup,
   CompleteProfile,
   FakePage,
   Members,
@@ -40,6 +41,7 @@ export const ROUTES = {
   completeProfile: '/complete-profile',
   completeProfileStep1: '/complete-profile/step-1',
   completeProfileStep2: '/complete-profile/step-2',
+  clubbSifnup: '/clubb-signup',
 };
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
@@ -122,6 +124,14 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
         element: <ProfileStep2 />,
       },
     ],
+  },
+  {
+    path: ROUTES.clubbSifnup,
+    element: (
+      <ProtectedRoute>
+        <ClubbSignup />
+      </ProtectedRoute>
+    ),
   },
   {
     path: ROUTES.restPasswordSuccess,

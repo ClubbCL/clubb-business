@@ -36,7 +36,6 @@ export const PercentageInput: React.FC<PercentageInputProps> = (props) => {
   };
 
   const handleOnChange = (inputValue: string) => {
-    console.log(inputValue);
     if (inputValue === '') {
       setValue(0);
       return;
