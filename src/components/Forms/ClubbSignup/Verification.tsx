@@ -4,6 +4,7 @@ import { ReloadIcon } from '@radix-ui/react-icons';
 import { Button } from '@ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@ui/form';
 import { Input } from '@ui/input';
+import { PhoneInput } from '@ui/phone-input';
 import React from 'react';
 import { FormProviderProps, useForm, UseFormReturn } from 'react-hook-form';
 import { Trans, useTranslation } from 'react-i18next';
@@ -21,10 +22,11 @@ export interface VerificationFormProps extends Partial<FormProviderProps> {
   onSubmit: (values: VerificationFormValues, form: VerificationForm) => void;
   disabled?: boolean;
   loading?: boolean;
+  initialValues?: Partial<VerificationFormValues>;
 }
 
 export const Verification: React.FC<VerificationFormProps> = (props) => {
-  const { onSubmit, disabled = false, loading = false, ...formProps } = props;
+  const { onSubmit, disabled = false, loading = false, initialValues = {}, ...formProps } = props;
 
   const { t } = useTranslation();
 
@@ -37,9 +39,12 @@ export const Verification: React.FC<VerificationFormProps> = (props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      phone: '',
-      email: '',
-      acceptTermsAndConditions: false,
+      ...{
+        phone: '',
+        email: '',
+        acceptTermsAndConditions: false,
+      },
+      ...initialValues,
     },
   });
 
@@ -57,12 +62,7 @@ export const Verification: React.FC<VerificationFormProps> = (props) => {
               <FormItem>
                 <FormLabel>{t('forms.clubbSetup.verification.phoneLabel')}</FormLabel>
                 <FormControl>
-                  <Input
-                    type="tel"
-                    placeholder={t('forms.clubbSetup.verification.phonePlaceholder')}
-                    disabled={isDisabled}
-                    {...field}
-                  />
+                  <PhoneInput defaultCountry="CL" searchPlaceholder="Buscar país..." {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

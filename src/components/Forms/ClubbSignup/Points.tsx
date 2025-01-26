@@ -8,7 +8,7 @@ import { Coins } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-type PointsFormValues = {
+export type PointsFormValues = {
   percentage: number;
 };
 
@@ -29,8 +29,6 @@ export const Points: React.FC<PointsFormProps> = ({ initialPercentage = 1, disab
   return (
     <div>
       <div>
-        <h1 className="text-lg font-semibold mb-2">{t('forms.clubbSetup.points.title')}</h1>
-        <h2 className="text-sm mb-8">{t('forms.clubbSetup.points.subtitle')}</h2>
         <div className="flex flex-col gap-y-6">
           <Card className="flex flex-1 flex-col p-4">
             <p className="flex items-center text-sm font-semibold">
@@ -38,7 +36,7 @@ export const Points: React.FC<PointsFormProps> = ({ initialPercentage = 1, disab
               {t('pages.points.box1.title')}
             </p>
             <div className="mt-6 mb-4">
-              <PercentageInput initialValue="1.0" onValueChange={setPercentage} />
+              <PercentageInput initialValue={percentage} onValueChange={setPercentage} />
             </div>
             <p className="text-gray-600 text-sm">{t('pages.points.box1.detail', { percentage })}</p>
           </Card>
@@ -50,7 +48,7 @@ export const Points: React.FC<PointsFormProps> = ({ initialPercentage = 1, disab
             <div className="mt-6 mb-4">
               <p className="text-2xl bg-violet-50 border rounded-lg inline-flex h-[65px] px-3 items-center">
                 <Coins size={30} className="text-amber-400 mr-2" />
-                {t('pages.points.box2.example', {
+                {t('pages.points.box2.example2', {
                   base: '$100',
                   earn: currency(100 * (percentage / 100), { precision: 2 }).format({
                     symbol: '$',

@@ -24,27 +24,31 @@ export interface InformationFormProps extends Partial<FormProviderProps> {
   onSubmit: (values: InformationFormValues, form: InformationForm) => void;
   disabled?: boolean;
   loading?: boolean;
+  initialValues?: Partial<InformationFormValues>;
 }
 
 export const Information: React.FC<InformationFormProps> = (props) => {
-  const { onSubmit, disabled = false, loading = false, ...formProps } = props;
+  const { onSubmit, disabled = false, loading = false, initialValues = {}, ...formProps } = props;
 
   const { t } = useTranslation();
 
   const formSchema = z.object({
-    companyName: z.string(),
+    companyName: z.string().min(2, 'El nombre de la empresa es requerido'),
     id: z.string().refine((value) => validateRUT(value), {
       message: t('forms.profile.errors.rutInvalid'),
     }),
-    type: z.string(),
+    type: z.string().min(2, 'Debe seleccionar un tipo de empresa'),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      companyName: '',
-      id: '',
-      type: '',
+      ...{
+        companyName: '',
+        id: '',
+        type: '',
+      },
+      ...initialValues,
     },
   });
 

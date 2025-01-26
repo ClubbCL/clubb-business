@@ -19,23 +19,27 @@ export interface ProfileFormProps extends Partial<FormProviderProps> {
   onSubmit: (values: ProfileFormValues, form: ProfileForm) => void;
   disabled?: boolean;
   loading?: boolean;
+  initialValues?: Partial<ProfileFormValues>;
 }
 
 export const Profile: React.FC<ProfileFormProps> = (props) => {
-  const { onSubmit, disabled = false, loading = false, ...formProps } = props;
+  const { onSubmit, disabled = false, loading = false, initialValues = {}, ...formProps } = props;
 
   const { t } = useTranslation();
 
   const formSchema = z.object({
-    name: z.string(),
-    account: z.string(),
+    name: z.string().min(1, 'El nombre del clubb es requerido'),
+    account: z.string().min(1, 'El nombre de la cuenta es requerido'),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      account: '',
+      ...{
+        name: '',
+        account: '',
+      },
+      ...initialValues,
     },
   });
 

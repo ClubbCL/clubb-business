@@ -27,7 +27,7 @@ const AVAILABLE_STATES = [
   { label: 'Región de Los Ríos', value: 'LR' },
   { label: 'Región de Los Lagos', value: 'LL' },
   { label: 'Región de Aysén del General Carlos Ibáñez del Campo', value: 'AI' },
-  { label: 'Región de Magallanes y de la Antártica Chilena', value: 'MA' },
+  { label: 'Región de Magallanes y de la Antártica Chilena', value: 'MAA' },
 ];
 
 export interface LocationFormValues {
@@ -44,29 +44,33 @@ export interface LocationFormProps extends Partial<FormProviderProps> {
   onSubmit: (values: LocationFormValues, form: LocationForm) => void;
   disabled?: boolean;
   loading?: boolean;
+  initialValues?: Partial<LocationFormValues>;
 }
 
 export const Location: React.FC<LocationFormProps> = (props) => {
-  const { onSubmit, disabled = false, loading = false, ...formProps } = props;
+  const { onSubmit, disabled = false, loading = false, initialValues = {}, ...formProps } = props;
 
   const { t } = useTranslation();
 
   const formSchema = z.object({
     isMainAddress: z.boolean(),
-    country: z.string(),
-    state: z.string(),
-    addressLine1: z.string(),
+    country: z.string().min(2, 'Debe seleccionar un país'),
+    state: z.string().min(2, 'Debe seleccionar una región'),
+    addressLine1: z.string().min(5, 'Debe ingresar una dirección'),
     addressLine2: z.string().optional(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      isMainAddress: true,
-      country: 'CL',
-      state: '',
-      addressLine1: '',
-      addressLine2: '',
+      ...{
+        isMainAddress: true,
+        country: 'CL',
+        state: '',
+        addressLine1: '',
+        addressLine2: '',
+      },
+      ...initialValues,
     },
   });
 
@@ -119,6 +123,7 @@ export const Location: React.FC<LocationFormProps> = (props) => {
                     ))}
                   </SelectContent>
                 </Select>
+                <FormMessage />
               </FormItem>
             )}
           />
