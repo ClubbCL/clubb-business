@@ -2,9 +2,13 @@ import { ProtectedRoute } from '@components';
 import {
   AccountCreated,
   Auth,
+  ClubbSignup,
+  CompleteProfile,
   FakePage,
   Members,
   Points,
+  ProfileStep1,
+  ProfileStep2,
   Redeem,
   ResetPasswordEmailSent,
   ResetPasswordSuccess,
@@ -34,6 +38,10 @@ export const ROUTES = {
   profile: '/profile',
   companyProfile: '/company-profile',
   redeem: '/redeem',
+  completeProfile: '/complete-profile',
+  completeProfileStep1: '/complete-profile/step-1',
+  completeProfileStep2: '/complete-profile/step-2',
+  clubbSifnup: '/clubb-signup',
 };
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
@@ -98,6 +106,32 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
         element: <Redeem />,
       },
     ],
+  },
+  {
+    path: ROUTES.completeProfile,
+    element: (
+      <ProtectedRoute>
+        <CompleteProfile />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        path: ROUTES.completeProfileStep1,
+        element: <ProfileStep1 />,
+      },
+      {
+        path: ROUTES.completeProfileStep2,
+        element: <ProfileStep2 />,
+      },
+    ],
+  },
+  {
+    path: ROUTES.clubbSifnup,
+    element: (
+      <ProtectedRoute>
+        <ClubbSignup />
+      </ProtectedRoute>
+    ),
   },
   {
     path: ROUTES.restPasswordSuccess,
