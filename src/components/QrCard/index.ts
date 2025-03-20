@@ -1,0 +1,1 @@
+export { QrCard } from './QrCard';
