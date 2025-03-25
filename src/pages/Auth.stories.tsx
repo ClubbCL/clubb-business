@@ -12,13 +12,47 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+// Default story (Sign In)
+export const Default: Story = {
+  parameters: {
+    reactRouter: {
+      routePath: '/signin',
+    },
+  },
+};
+
+export const SignUp: Story = {
+  parameters: {
+    reactRouter: {
+      routePath: '/signup',
+    },
+  },
+};
+
+export const ForgotPassword: Story = {
+  parameters: {
+    reactRouter: {
+      routePath: '/forgot-password',
+    },
+  },
+};
+
+export const ResetPassword: Story = {
+  parameters: {
+    reactRouter: {
+      routePath: '/reset-password',
+    },
+  },
+};
 
 // Mobile view
 export const Mobile: Story = {
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
+    },
+    reactRouter: {
+      routePath: '/signin',
     },
   },
 };
@@ -28,6 +62,9 @@ export const Tablet: Story = {
   parameters: {
     viewport: {
       defaultViewport: 'tablet',
+    },
+    reactRouter: {
+      routePath: '/signin',
     },
   },
 };

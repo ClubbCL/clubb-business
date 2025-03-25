@@ -2,6 +2,7 @@ import 'tailwindcss/tailwind.css';
 import '../src/index.css';
 
 import i18n from '../src/i18n';
+import { AuthContext } from '../src/providers/AuthProvider';
 
 import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
 import type { Preview } from "@storybook/react";
@@ -27,6 +28,13 @@ const preview: Preview = {
   },
 };
 
+const mockAuthContext = {
+  user: null,
+  session: null,
+  loading: false,
+  signOut: async () => {},
+};
+
 // Wrap your stories in the I18nextProvider component
 const withI18next = (Story, context) => {
   const { locale } = context.globals;
@@ -47,7 +55,7 @@ const withI18next = (Story, context) => {
 };
 
 const withRouter = (Story, context) => {
-  const initialRoute = context.parameters?.route || '/';
+  const initialRoute = context.parameters?.reactRouter?.routePath || context.parameters?.route || '/';
 
   return (
     <MemoryRouter initialEntries={[initialRoute]}>
@@ -55,6 +63,14 @@ const withRouter = (Story, context) => {
         <Route path="/*" element={<Story />} />
       </Routes>
     </MemoryRouter>
+  );
+};
+
+const withAuth = (Story) => {
+  return (
+    <AuthContext.Provider value={mockAuthContext}>
+      <Story />
+    </AuthContext.Provider>
   );
 };
 
@@ -84,4 +100,4 @@ export const globalTypes = {
 };
 
 export default preview;
-export const decorators = [withI18next, withLocationLogger, withRouter];
+export const decorators = [withI18next, withAuth, withLocationLogger, withRouter];
