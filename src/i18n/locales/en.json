@@ -19,7 +19,7 @@
           "apple": "Continue with Apple"
         },
         "divider": "or continue with email",
-        "termsAndPrivacy": "By continuing, you acknowledge that you understand and accept the Terms and Conditions and Privacy Policy."
+        "termsAndPrivacy": "By continuing, you acknowledge that you understand and accept the <terms>Terms and Conditions</terms> and <privacy>Privacy Policy</privacy>."
       }
     },
     "accountCreated": {
