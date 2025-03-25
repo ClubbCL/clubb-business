@@ -7,7 +7,20 @@
   },
   "pages": {
     "auth": {
-      "header": "A membership clubb for your business"
+      "header": {
+        "title": "Create a membership club for your business.",
+        "subtitle": "Start building loyalty, in seconds —— and free."
+      },
+      "signIn": {
+        "title": "Sign in or",
+        "createAccount": "create your account (free)",
+        "socialLogin": {
+          "google": "Continue with Google",
+          "apple": "Continue with Apple"
+        },
+        "divider": "or continue with email",
+        "termsAndPrivacy": "By continuing, you acknowledge that you understand and accept the Terms and Conditions and Privacy Policy."
+      }
     },
     "accountCreated": {
       "title": "Account Created!",

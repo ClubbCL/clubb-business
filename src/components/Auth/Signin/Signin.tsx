@@ -98,7 +98,7 @@ export const Signin: React.FC<SigninProps> = (props) => {
             )}
           />
           {formError && <ErrorMessage className="mt-4">{formError.message}</ErrorMessage>}
-          <Button type="submit" disabled={isDisabled} className="mt-4">
+          <Button type="submit" disabled={isDisabled} className="mt-4 bg-indigo-600 hover:bg-indigo-700">
             {loading ? <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : t('forms.signin.labels.submit')}
           </Button>
         </div>

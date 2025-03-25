@@ -7,7 +7,20 @@
   },
   "pages": {
     "auth": {
-      "header": "Un clubb de miembros para tu negocio"
+      "header": {
+        "title": "Crea un club de miembros para tu negocio.",
+        "subtitle": "Comienza a fidelizar, en segundos —— y gratis."
+      },
+      "signIn": {
+        "title": "Inicia sesión o",
+        "createAccount": "crea tu cuenta (gratis)",
+        "socialLogin": {
+          "google": "Continuar con Google",
+          "apple": "Continuar con Apple"
+        },
+        "divider": "o continuar con email",
+        "termsAndPrivacy": "Al continuar, reconoces que comprendes y aceptas los Términos y condiciones y la Política de privacidad."
+      }
     },
     "accountCreated": {
       "title": "¡Cuenta Creada!",
