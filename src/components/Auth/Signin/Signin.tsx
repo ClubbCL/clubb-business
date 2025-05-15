@@ -78,7 +78,7 @@ export const Signin: React.FC<SigninProps> = (props) => {
               <FormItem>
                 <FormLabel>{t('forms.signin.labels.email')}</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="myemail@gmail.com" disabled={isDisabled} {...field} />
+                  <Input type="email" placeholder="Ingresa tu email" disabled={isDisabled} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
